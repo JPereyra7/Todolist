@@ -1,3 +1,9 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -14,54 +20,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-
-li {
-  // border: 1px solid #213547;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  list-style-type: none;
-
-} 
-
-li:hover {
-  background-color: #1a1919;
-  border: 1px solid #535bf2;
-  cursor: pointer;
-}
-
-li:active {
-  color: #535bf2;
-}
-
-#todoInput {
-  // padding: 10px;
-  // padding-left: 200px;
-  width: 390px;
-  height: 30px;
-  font-size: 1.3em;
-}
-
-button {
-  margin-left: 15px;
-  margin-top: 5px;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 body {
   margin: 0;
@@ -76,18 +34,29 @@ h1 {
   line-height: 1.1;
 }
 
+.finishedList {
+  color: #f9f9f9;
+}
+
+.unFinishedList {
+  color: #f9f9f9;
+  font-size: 1.5em;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   border: 1px solid #1a1919;
-  background-color: #1a1a1a;
+  border-radius: 10px;
+  background-color: #151515;
+  box-shadow: 5px 9px 8px #0e0e0e;
 }
 
 img {
   width: 250px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #f1e0a5;
 }
 
 .logo {
@@ -111,24 +80,24 @@ img {
   color: #888;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+// button {
+//   border-radius: 8px;
+//   border: 1px solid transparent;
+//   padding: 0.6em 1.2em;
+//   font-size: 1em;
+//   font-weight: 500;
+//   font-family: inherit;
+//   background-color: #1a1a1a92;
+//   cursor: pointer;
+//   transition: border-color 0.25s;
+// }
+// button:hover {
+//   border-color: #646cff;
+// }
+// button:focus,
+// button:focus-visible {
+//   outline: 4px auto -webkit-focus-ring-color;
+// }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -140,5 +109,33 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+section {
+  display: flex;
+  gap: 10px;
+}
+
+.todo {
+  width: 20%;
+  border: 1px solid #242424;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #191a19;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 7px #0e0e0e;
+
+  &:hover {
+    background-color: #1a1919;
+    color: #f1e0a5;
+  text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
+  transition: 0.2s;
+
+  box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
+  transition: 0.5s;
   }
 }

@@ -1,14 +1,62 @@
 import "./../scss/style.scss";
 
+/*Arrayay*/
 
+const numbers = [];
 
-const app = document.getElementById("app"); // Skapar en hook till html div:en
+for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+    
+}
 
+for (let i = 0; i < numbers.length; i++) {
+    const div = document.createElement("div");
+    
+    document.body.appendChild(div);
+}
 
-const ulLista = document.getElementById("ulLista");
+const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointment", "Call the broker"];
 
-document.getElementById("ulLista").addEventListener("click", function() {
-    forEach(function() {
-        item.classList.add('active')
+const completedTasks = [];
+
+const todoListContainer = document.querySelector("section#products");
+
+todoList.forEach((todo) => {
+    const todoContainer = document.createElement("div");
+    const title = document.createElement("h3");
+
+    title.innerHTML = todo;
+    todoContainer.className = "todo";
+    todoContainer.addEventListener("click", () => {
+        completedTasks.push(todo);
+        console.log(completedTasks);
+        createCompletedHtml();
     });
-})
+    todoContainer.appendChild(title);
+    todoListContainer.appendChild(todoContainer);
+});
+
+    const completedContainer = document.querySelector("section#cart");
+
+    const createCompletedHtml = () => {
+        completedContainer.innerHTML = "";
+
+        completedTasks.forEach((completedItem, i) => {
+            const todoContainer = document.createElement("div");
+            const title = document.createElement("h3");
+
+            title.innerHTML = completedItem;
+            todoContainer.className = "todo";
+
+            todoContainer.addEventListener("click", () =>{
+                completedTasks.splice(i, 1);
+                createCompletedHtml();
+            });
+
+            todoContainer.appendChild(title);
+            completedContainer.appendChild(todoContainer);
+
+        });
+        
+    }
+

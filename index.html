@@ -9,36 +9,21 @@
   <body>
     <div id="app">
 
-      <!-- This section is for logo and heading -->
-      <header>
+      <p id="todoList"></p>
       <img src="/src/images/TodoTódo.svg" alt="">
-      <h3>Fill out your task!</h3>
-      </header>
-      
-      <!-- This section is for the input (DIY form) -->
-      <form id="todoForm">
-      <div class="flex">
-      <input type="text" id="todoInput">
-      <button id="btn">Add</button>
-    </div>
+      <form id="formID">
+        <input id="inputID" type="text">
+        <button id="buttonID">Add</button>
       </form>
+      <h3 class="unFinishedList">Fill out your task!</h3>
+      <section id="products"></section>
 
-      <!-- This section is for the hardcoded tasks -->
-      <ul id="ulList">
-        <li>Watch Soccer</li>
-        <li>Take out the trash</li>
-        <li>Watch soccer</li>
-      </ul>
+      <h3 class="finishedList" id="someId">Completed Tasks:</h3>
+      <section id="cart"></section>
 
-      <!-- This section is for the completed tasks -->
-      <section class="completedContainer">
-        <h3>Completed tasks</h3>
-        <div class="completedContainer">
-          <ul id="completedTasks"></ul>
-        </div>
-      </section>
- 
+      </div>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
+

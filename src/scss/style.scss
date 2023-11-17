@@ -23,6 +23,46 @@ a:hover {
   color: #535bf2;
 }
 
+
+li {
+  // border: 1px solid #213547;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  list-style-type: none;
+
+} 
+
+li:hover {
+  background-color: #1a1919;
+  border: 1px solid #535bf2;
+  cursor: pointer;
+}
+
+li:active {
+  color: #535bf2;
+}
+
+#todoInput {
+  // padding: 10px;
+  // padding-left: 200px;
+  width: 390px;
+  height: 30px;
+  font-size: 1.3em;
+}
+
+button {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -41,6 +81,13 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 1px solid #1a1919;
+  background-color: #1a1a1a;
+}
+
+img {
+  width: 250px;
+  border-bottom: 1px solid white;
 }
 
 .logo {

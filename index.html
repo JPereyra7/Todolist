@@ -4,10 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo or not todo?</title>
+    <title>TodoTódo</title>
   </head>
   <body>
-    <div id="app"><p>hejhej</p></div>
+    <div id="app">
+
+      <!-- This section is for logo and heading -->
+      <header>
+      <img src="/src/images/TodoTódo.svg" alt="">
+      <h3>Fill out your task!</h3>
+      </header>
+      
+      <!-- This section is for the input (DIY form) -->
+      <form id="todoForm">
+      <div class="flex">
+      <input type="text" id="todoInput">
+      <button id="btn">Add</button>
+    </div>
+      </form>
+
+      <!-- This section is for the hardcoded tasks -->
+      <ul id="ulList">
+        <li>Watch Soccer</li>
+        <li>Take out the trash</li>
+        <li>Watch soccer</li>
+      </ul>
+
+      <!-- This section is for the completed tasks -->
+      <section class="completedContainer">
+        <h3>Completed tasks</h3>
+        <div class="completedContainer">
+          <ul id="completedTasks"></ul>
+        </div>
+      </section>
+ 
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

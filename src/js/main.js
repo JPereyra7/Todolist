@@ -1,25 +1,11 @@
 import "./../scss/style.scss";
 
-/*Arrayay*/
-
-const numbers = [];
-
-for (let i = 0; i < numbers.length; i++) {
-    console.log(numbers[i]);
-    
-}
-
-for (let i = 0; i < numbers.length; i++) {
-    const div = document.createElement("div");
-    
-    document.body.appendChild(div);
-}
 
 const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointment", "Call the broker"];
 
 const completedTasks = [];
 
-const todoListContainer = document.querySelector("section#products");
+const todoListContainer = document.getElementById("themTasks");
 
 todoList.forEach((todo) => {
     const todoContainer = document.createElement("div");
@@ -36,7 +22,7 @@ todoList.forEach((todo) => {
     todoListContainer.appendChild(todoContainer);
 });
 
-    const completedContainer = document.querySelector("section#cart");
+    const completedContainer = document.getElementById("themFinished");
 
     const createCompletedHtml = () => {
         completedContainer.innerHTML = "";
@@ -59,4 +45,3 @@ todoList.forEach((todo) => {
         });
         
     }
-

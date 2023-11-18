@@ -1,8 +1,6 @@
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
+* {
+  box-sizing: border-box;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -30,21 +28,31 @@ body {
   background-image: url(/src/images/mainnet-fbad3338fed984017713102896a426df.png);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+// h1 {
+//   font-size: 3.2em;
+//   line-height: 1.1;
+// }
+.fillClass {
+  color: #f9f9f9;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .finishedList {
   color: #f9f9f9;
   border-bottom: 1px solid #242424;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .unFinishedList {
   color: #f9f9f9;
-  font-size: 1.1em;
-  margin-top: 30px;
   border-bottom: 1px solid #242424;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 #app {
@@ -152,14 +160,15 @@ section {
     &:hover {
       background-color: #1a1919;
       color: #f1e0a5;
-    text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
-    transition: 0.2s;
+      text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
+      transition: 0.2s;
   
-    box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
-    transition: 0.5s;
+      box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
+      transition: 0.5s;
     }
   }
 }
+
 
 // Desktop view 1200px min
 @media (min-width: 1200px) {

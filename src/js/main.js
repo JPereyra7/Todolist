@@ -9,6 +9,51 @@ const completedTasks = [];
 const todoListContainer = document.getElementById("themTasks");
 const completedContainer = document.getElementById("themFinished");
 
+const inputID = document.getElementById("inputID");
+const buttonID = document.getElementById("buttonID");
+
+buttonID.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const newTask = inputID.value;
+    if (newTask.trim() !== "") {
+        todoList.unshift(newTask);
+        console.log(todoList);
+
+        createTodoListHtml();
+    }
+    inputID.value = "";
+});
+
+//Input function
+function createInputHtml() {
+    inputID.innerHTML = "";
+
+    inputWritten.forEach((completedInput, i) => {
+        const inputContainer = document.createElement("div");
+        const title = document.createElement("h3");
+
+        title.innerHTML = completedInput;
+        inputContainer.className = "todo";
+
+        inputContainer.addEventListener("submit", () => {
+            todoList.unshift(completedInput);
+            console.log(todoList);
+
+
+        
+    });
+                inputContainer.appendChild(title);
+            inputID.appendChild(inputContainer);
+        });
+    }
+
+
+
+
+
+
+
 //First Function
 function createCompletedHtml() {
     completedContainer.innerHTML = "";

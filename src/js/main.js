@@ -1,11 +1,13 @@
 import "./../scss/style.scss";
 
+//Loading the list in the array localstorage
+document.addEventListener("DOMContentLoaded", function () {
+    loadTodos();
+});
 
 const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointment", "Call the broker"];
 
 const completedTasks = [];
-
-
 
 // Create a hook to the tasks and completed task ID's
 const todoListContainer = document.getElementById("themTasks");
@@ -15,20 +17,61 @@ const completedContainer = document.getElementById("themFinished");
 const inputID = document.getElementById("inputID");
 const buttonID = document.getElementById("buttonID");
 
+// Hook for the clear button
+
+const clearButtonID = document.getElementById("clearID");
+
+clearButtonID.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    todoList.length = 0;
+    completedTasks.length = 0;
+    
+    createTodoListHtml();
+    createCompletedHtml();
+
+    saveTodos();
+});
+
+
+
+// Adding the click event when adding new task
+
 buttonID.addEventListener("click", function(e) {
     e.preventDefault();
 
     const newTask = inputID.value;
     if (newTask.trim() !== "") {
         todoList.unshift(newTask);
-        console.log(todoList);
+        saveTodos();
 
         createTodoListHtml();
     }
     inputID.value = "";
 });
 
-//Input input function and button event
+//First function
+function saveTodos() {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+}
+
+//Second function
+function loadTodos() {
+    const storedTodos = localStorage.getItem('todoList');
+
+    if (storedTodos) {
+        const storedTodos = localStorage.getItem('todoList');
+
+        if (storedTodos) {
+            todoList.length = 0;
+            const parsedTodos = JSON.parse(storedTodos);
+            Array.prototype.push.apply(todoList, parsedTodos);
+            createTodoListHtml();
+        }
+    }
+}
+
+//Third function - Input input function and button event
 function createInputHtml() {
     inputID.innerHTML = "";
 
@@ -48,7 +91,7 @@ function createInputHtml() {
         });
     }
 
-//Second Function
+//Fourth Function
 function createCompletedHtml() {
     completedContainer.innerHTML = "";
 
@@ -75,7 +118,7 @@ function createCompletedHtml() {
     });
 }
 
-//Third Function
+//Fifth Function
 function createTodoListHtml() {
     todoListContainer.innerHTML = "";
 
@@ -87,7 +130,7 @@ function createTodoListHtml() {
         todoContainer.className = "todo";
         todoContainer.addEventListener("click", () => {
             completedTasks.push(todo);
-            console.log(completedTasks);
+            saveTodos();
             createCompletedHtml();
 
             // Remove the task from todoList
@@ -103,7 +146,6 @@ function createTodoListHtml() {
         todoListContainer.appendChild(todoContainer);
     });
 }
-
 
 createTodoListHtml();
 createCompletedHtml();

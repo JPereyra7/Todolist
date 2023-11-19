@@ -3,7 +3,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: $xs-weight;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -29,7 +29,7 @@ body {
 .fillClass {
   color: $primary-font-color;
   font-weight: $primary-weight;
-  font-size: 20px;
+  font-size: $font-primary-size;
   text-transform: uppercase;
 
   &:hover {
@@ -41,7 +41,7 @@ body {
   color: $primary-font-color;
   border-bottom: 1px solid $primary-underline-color;
   font-weight: $secondary-weight;
-  font-size: 20px;
+  font-size: $font-primary-size;
   text-transform: uppercase;
 
   &:hover {
@@ -53,7 +53,7 @@ body {
   color: $primary-font-color;
   border-bottom: 1px solid $primary-underline-color;
   font-weight: $secondary-weight;
-  font-size: 20px;
+  font-size: $font-primary-size;
   text-transform: uppercase;
 
   &:hover {
@@ -85,7 +85,7 @@ img {
 section {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: $font-primary-size;
 }
 
 .formContainer {

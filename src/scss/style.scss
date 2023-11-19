@@ -26,15 +26,15 @@ body {
   background-image: url(/src/images/mainnet-fbad3338fed984017713102896a426df.png);
 }
 
-// h1 {
-//   font-size: 3.2em;
-//   line-height: 1.1;
-// }
 .fillClass {
   color: $primary-font-color;
   font-weight: $primary-weight;
   font-size: 20px;
   text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  } 
 }
 
 .finishedList {
@@ -43,14 +43,22 @@ body {
   font-weight: $secondary-weight;
   font-size: 20px;
   text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  }
 }
 
 .unFinishedList {
-  color: #f9f9f9;
+  color: $primary-font-color;
   border-bottom: 1px solid $primary-underline-color;
   font-weight: $secondary-weight;
   font-size: 20px;
   text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  }
 }
 
 #app {
@@ -63,16 +71,14 @@ body {
   background-color: $app-primary;
   box-shadow: 5px 9px 8px #0e0e0e;
   opacity: 80%;
-
-//     &:hover {
-//   box-shadow: 0 0 5px #dac687, 0 0 5px #dac687;
-//   transition: 1.5s;
-// }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 img {
   width: 300px;
-  border-bottom: 1px solid #f1e0a5;
+  border-bottom: 1px solid $glow-hover-color;
 }
 
 
@@ -91,28 +97,26 @@ section {
 }
 
 .inputClass {
-  // width: 50%;
   padding-bottom: 10px;
   background-color: $box-bg-color;
   border: 1px solid $primary-underline-color;
-  // border-bottom: 1px solid #f1e0a5;
+  width: 250px;
 }
 
 .buttonClass {
-  width: 60px;
+  width: 70px;
+  height: 40px;
   padding: 0.4rem;
   border-radius: 5px;
   background-color: $box-bg-color;
   border: 1px solid $primary-underline-color;
+  font-weight: $primary-weight;
 
   
   &:hover {
     background-color: $box-bg-hovered;
-    color: #f1e0a5;
-    text-shadow: 0 0 5px #dac687;;
-    // transition: 0.2s;
-    // text-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
-    // transition: 0.5s;
+    color: $glow-hover-color;
+    text-shadow: 0 0 5px $primary-glow-hover;
   }
 }
 
@@ -123,19 +127,16 @@ section {
   border-radius: 15px;
   background-color: $primary-box-color;
   cursor: pointer;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   box-shadow: 3px 3px 7px #0e0e0e;
 
   &:hover {
     background-color: $box-bg-hovered;
-    color: #f1e0a5;
-  text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
-  transition: 0.2s;
+    color: $glow-hover-color;
+    text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+    transition: 0.2s;
 
-  box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
-  transition: 0.5s;
+    box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+    transition: 0.5s;
   }
 }
 
@@ -144,6 +145,8 @@ section {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $primary-underline-color;
 }
 
 .flex2 {
@@ -157,10 +160,10 @@ section {
 
 
 // 280px Mobile View (I chose this due to the smaller screen such as the Galaxy Fold only has 280x653 in aspects ratio). If it's gonna be mobile friendly then let's include everyone! :)
-@media (min-width: 280px) {
+@media (min-width: $mobile) {
   .todo {
     width: 20%;
-    border: 1px solid #242424;
+    border: 1px solid $primary-underline-color;
     padding: 2rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 15px;
@@ -173,11 +176,11 @@ section {
 
     &:hover {
       background-color: $box-bg-hovered;
-      color: #f1e0a5;
-      text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
       transition: 0.2s;
   
-      box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
       transition: 0.5s;
     }
   }
@@ -185,13 +188,13 @@ section {
 
 
 // Desktop view 1200px min
-@media (min-width: 1200px) {
+@media (min-width: $desktop) {
   .todo {
     width: 15%;
     height: 3.8rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.6em;
-    border: 1px solid #242424;
+    border: 1px solid $primary-underline-color;
     padding: 2rem;
     border-radius: 15px;
     background-color: $primary-box-color;
@@ -203,12 +206,12 @@ section {
 
     &:hover {
       background-color: $box-bg-hovered;
-      color: #f1e0a5;
-    text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
-    transition: 0.2s;
-  
-    box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
-    transition: 0.5s;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+      transition: 0.2s;
+
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+      transition: 0.5s;
     }
   }
 }

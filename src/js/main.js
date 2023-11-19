@@ -5,6 +5,8 @@ const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointm
 
 const completedTasks = [];
 
+
+
 // Create a hook to the tasks and completed task ID's
 const todoListContainer = document.getElementById("themTasks");
 const completedContainer = document.getElementById("themFinished");

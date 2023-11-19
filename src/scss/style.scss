@@ -1,6 +1,6 @@
-* {
-  box-sizing: border-box;
-}
+// * {
+//   box-sizing: border-box;
+// }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -42,7 +42,7 @@ body {
 .finishedList {
   color: #f9f9f9;
   border-bottom: 1px solid #242424;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -50,7 +50,7 @@ body {
 .unFinishedList {
   color: #f9f9f9;
   border-bottom: 1px solid #242424;
-  font-weight: 900;
+  font-weight: 500;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -67,7 +67,7 @@ body {
   opacity: 80%;
 
 //     &:hover {
-//   box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
+//   box-shadow: 0 0 5px #dac687, 0 0 5px #dac687;
 //   transition: 1.5s;
 // }
 }
@@ -88,12 +88,12 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 2em;
+  gap: 1em;
   margin-top: 15px;
 }
 
 .inputClass {
-  width: 50%;
+  // width: 50%;
   padding-bottom: 10px;
   background-color: #202020;
   border: 1px solid #242424;
@@ -101,20 +101,20 @@ section {
 }
 
 .buttonClass {
-  width: 50px;
+  width: 60px;
   padding: 0.4rem;
-  // border-radius: 2px;
-  background-color: #212122;
+  border-radius: 5px;
+  background-color: #202020;
+  border: 1px solid #242424;
 
   
   &:hover {
     background-color: #1a1919;
     color: #f1e0a5;
-  text-shadow: 0 0 5px #dac687, 0 0 25px #dac687;
-  transition: 0.2s;
-
-  box-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
-  transition: 0.5s;
+    text-shadow: 0 0 5px #dac687;;
+    // transition: 0.2s;
+    // text-shadow: 0 0 5px #dac687, 0 0 25px #dac687, 0 0 50px #dac687, 0 0 100px #dac687;
+    // transition: 0.5s;
   }
 }
 
@@ -125,9 +125,9 @@ section {
   border-radius: 15px;
   background-color: #19191a;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   box-shadow: 3px 3px 7px #0e0e0e;
 
   &:hover {
@@ -141,13 +141,29 @@ section {
   }
 }
 
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
-// 768px Mobile View
-@media (min-width: 768px) {
+.flex2 {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// 280px Mobile View (I chose this due to the smaller screen such as the Galaxy Fold only has 280x653 in aspects ratio). If it's gonna be mobile friendly then let's include everyone! :)
+@media (min-width: 280px) {
   .todo {
     width: 20%;
     border: 1px solid #242424;
-    padding: 0.5rem;
+    padding: 2rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 15px;
     background-color: #19191a;
@@ -173,12 +189,12 @@ section {
 // Desktop view 1200px min
 @media (min-width: 1200px) {
   .todo {
-    width: 20%;
-    height: 3.5rem;
+    width: 15%;
+    height: 3.8rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.7em;
+    font-size: 0.6em;
     border: 1px solid #242424;
-    padding: 0.5rem;
+    padding: 2rem;
     border-radius: 15px;
     background-color: #19191a;
     cursor: pointer;

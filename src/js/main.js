@@ -5,10 +5,11 @@ const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointm
 
 const completedTasks = [];
 
-            // Create a hook to the tasks and completed task ID's
+// Create a hook to the tasks and completed task ID's
 const todoListContainer = document.getElementById("themTasks");
 const completedContainer = document.getElementById("themFinished");
 
+// Create hook for input and button
 const inputID = document.getElementById("inputID");
 const buttonID = document.getElementById("buttonID");
 
@@ -25,7 +26,7 @@ buttonID.addEventListener("click", function(e) {
     inputID.value = "";
 });
 
-//Input function
+//Input input function and button event
 function createInputHtml() {
     inputID.innerHTML = "";
 
@@ -39,22 +40,13 @@ function createInputHtml() {
         inputContainer.addEventListener("submit", () => {
             todoList.unshift(completedInput);
             console.log(todoList);
-
-
-        
     });
                 inputContainer.appendChild(title);
             inputID.appendChild(inputContainer);
         });
     }
 
-
-
-
-
-
-
-//First Function
+//Second Function
 function createCompletedHtml() {
     completedContainer.innerHTML = "";
 
@@ -66,7 +58,7 @@ function createCompletedHtml() {
         todoContainer.className = "todo";
 
         todoContainer.addEventListener("click", () => {
-            // Move the task back to the to-do list
+            // Move the task back to the todo list
             todoList.push(completedItem);
             console.log(todoList);
 
@@ -81,7 +73,7 @@ function createCompletedHtml() {
     });
 }
 
-//Second Function
+//Third Function
 function createTodoListHtml() {
     todoListContainer.innerHTML = "";
 

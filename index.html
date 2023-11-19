@@ -10,21 +10,26 @@
     <div id="app">
 
       <p id="todoList"></p>
-      <img src="/src/images/TodoTódo.svg" alt="">
+     
+      <div class="flex1">
+        <img src="/src/images/TodoTódo.svg" alt="logotype">
 
       <h3 class="fillClass">¡Fill out your task!</h3>
       <form id="formID" class="formContainer">
+        
         <input id="inputID" class="inputClass" type="text">
         <button id="buttonID" type="submit" class="buttonClass">Add</button>
       </form>
+    </div>
 
+    <div class="flex2">
       <h3 class="unFinishedList">Active Tasks</h3>
       <section id="themTasks" class="themTasks"></section>
 
       <h3 class="finishedList">Completed Tasks</h3>
       <section id="themFinished" class="themFinished"></section>
-
       </div>
+    </div>
 
     <script type="module" src="/src/js/main.js"></script>
   </body>

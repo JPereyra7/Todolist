@@ -20,20 +20,19 @@ const todoList2 = new Original("Take the trash out");
 const todoList3 = new Original("Book a dentist appointment");
 const todoList4 = new Original("Call the broker");
 
-let todoList = [todoList1, todoList2, todoList3, todoList4];
+const todoList = [todoList1, todoList2, todoList3, todoList4];
 const completedTasks = [];
 
-// Create a hook to the tasks and completed task ID's || and input and button
+// Create a hook to the tasks and completed task ID's || and input, and button
 const todoListContainer = document.getElementById("themTasks");
 const completedContainer = document.getElementById("themFinished");
 const inputID = document.getElementById("inputID");
 const buttonID = document.getElementById("buttonID");
-
-// Clear button event for completed tasks
 const clearButtonID = document.getElementById("clearID");
 
 //Event listener listening for a click to reset completed tasks
 clearButtonID.addEventListener("click", function (e) {
+    //Prevent the submit behaviour!
     e.preventDefault();
 
     //Clears the completedTasks array
@@ -51,7 +50,7 @@ buttonID.addEventListener("click", function(e) {
     e.preventDefault();
 
     const newTask = inputID.value;
-    if (newTask.trim() !== "") {
+    if (newTask !== "") {
         todoList.unshift(newTask);
 
         //Save to localstorage

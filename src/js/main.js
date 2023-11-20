@@ -5,8 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
     loadTodos();
 });
 
-const todoList = ["Watch Soccer", "Take out the trash", "Book a dentist appointment", "Call the broker"];
+class Original {
+    task;
 
+    constructor (task) {
+        this.task = task;
+    }
+}
+
+const todoList1 = new Original("Watch Soccer");
+const todoList2 = new Original("Take the trash out");
+const todoList3 = new Original("Book a dentist appointment");
+const todoList4 = new Original("Call the broker");
+
+let todoList = [todoList1, todoList2, todoList3, todoList4];
 const completedTasks = [];
 
 // Create a hook to the tasks and completed task ID's

@@ -97,10 +97,15 @@ section {
 }
 
 .inputClass {
-  padding-bottom: 10px;
   background-color: $box-bg-color;
-  border: 1px solid $primary-underline-color;
+  border: 1px solid $glow-hover-color;
   width: 250px;
+  font-weight: $primary-weight;
+  font-size: $font-secondary-size;
+  text-align: left;
+  // text-shadow: 0 0 5px $primary-glow-hover;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .buttonClass {

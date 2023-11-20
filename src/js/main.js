@@ -17,14 +17,13 @@ const completedContainer = document.getElementById("themFinished");
 const inputID = document.getElementById("inputID");
 const buttonID = document.getElementById("buttonID");
 
-// Hook for the clear button
-
+// Clear button event for completed tasks
 const clearButtonID = document.getElementById("clearID");
 
 clearButtonID.addEventListener("click", function (e) {
     e.preventDefault();
 
-    todoList.length = 0;
+    // todoList.length = 0;
     completedTasks.length = 0;
     
     createTodoListHtml();
@@ -33,10 +32,7 @@ clearButtonID.addEventListener("click", function (e) {
     saveTodos();
 });
 
-
-
 // Adding the click event when adding new task
-
 buttonID.addEventListener("click", function(e) {
     e.preventDefault();
 

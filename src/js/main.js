@@ -21,11 +21,9 @@ const todoList4 = new Original("Call the broker");
 let todoList = [todoList1, todoList2, todoList3, todoList4];
 const completedTasks = [];
 
-// Create a hook to the tasks and completed task ID's
+// Create a hook to the tasks and completed task ID's || and input and button
 const todoListContainer = document.getElementById("themTasks");
 const completedContainer = document.getElementById("themFinished");
-
-// Create hook for input and button
 const inputID = document.getElementById("inputID");
 const buttonID = document.getElementById("buttonID");
 
@@ -35,7 +33,6 @@ const clearButtonID = document.getElementById("clearID");
 clearButtonID.addEventListener("click", function (e) {
     e.preventDefault();
 
-    // todoList.length = 0;
     completedTasks.length = 0;
     
     createTodoListHtml();
@@ -92,7 +89,6 @@ function createInputHtml() {
 
         inputContainer.addEventListener("submit", () => {
             todoList.unshift(completedInput);
-            console.log(todoList);
     });
                 inputContainer.appendChild(title);
             inputID.appendChild(inputContainer);
@@ -113,7 +109,6 @@ function createCompletedHtml() {
         todoContainer.addEventListener("click", () => {
             // Move the task back to the todo list
             todoList.push(completedItem);
-            console.log(todoList);
 
             completedTasks.splice(i, 1);
 

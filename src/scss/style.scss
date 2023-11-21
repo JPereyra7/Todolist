@@ -1,5 +1,51 @@
 @import 'variables';
+//-----------------------------Mixins Settings-----------------------------------
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+@mixin todo-mobile {
+  width: 20%;
+  border: 1px solid $primary-underline-color;
+  padding: 2rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 15px;
+  background-color: $primary-box-color;
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #0e0e0e;
+} @mixin todo-mobile-hover {
+  background-color: $box-bg-hovered;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+      transition: 0.2s;
+  
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+      transition: 0.5s;
+}
+
+@mixin todo-desktop {
+    width: 15%;
+    height: 3.8rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6em;
+    border: 1px solid $primary-underline-color;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: $primary-box-color;
+    cursor: pointer;
+    box-shadow: 3px 3px 7px #0e0e0e;
+} @mixin todo-desktop-hover {
+      background-color: $box-bg-hovered;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+      transition: 0.2s;
+
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+      transition: 0.5s;
+}
+//-----------------------------Root settings-----------------------------------
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,7 +61,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+//----------------------------------------------------------------
 
 body {
   margin: 0;
@@ -155,38 +201,21 @@ section {
 }
 
 .flex2 {
-  display: flex;
   gap: 1em;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  @include flex;
 }
 
 
 // 280px Mobile View (I chose this due to the smaller screen such as the Galaxy Fold only has 280x653 in aspects ratio). If it's gonna be mobile friendly then let's include everyone! :)
 @media (min-width: $mobile) {
   .todo {
-    width: 20%;
-    border: 1px solid $primary-underline-color;
-    padding: 2rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 15px;
-    background-color: $primary-box-color;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 3px 3px 7px #0e0e0e;
+    @include flex;
+    @include todo-mobile;
 
     &:hover {
-      background-color: $box-bg-hovered;
-      color: $glow-hover-color;
-      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
-      transition: 0.2s;
-  
-      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
-      transition: 0.5s;
+      @include todo-mobile-hover;
     }
   }
 }
@@ -195,28 +224,11 @@ section {
 // Desktop view 1200px min
 @media (min-width: $desktop) {
   .todo {
-    width: 15%;
-    height: 3.8rem;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.6em;
-    border: 1px solid $primary-underline-color;
-    padding: 2rem;
-    border-radius: 15px;
-    background-color: $primary-box-color;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 3px 3px 7px #0e0e0e;
+    @include flex;
+    @include todo-desktop;
 
     &:hover {
-      background-color: $box-bg-hovered;
-      color: $glow-hover-color;
-      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
-      transition: 0.2s;
-
-      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
-      transition: 0.5s;
+      @include todo-desktop-hover;
     }
   }
 }

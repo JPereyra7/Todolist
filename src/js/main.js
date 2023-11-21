@@ -50,8 +50,8 @@ buttonID.addEventListener("click", function(e) {
     e.preventDefault();
 
     const newTask = inputID.value;
-    if (newTask !== "") {
-        todoList.unshift(newTask);
+    if (newTask.trim() !== "") {
+        todoList.unshift(new Original(newTask));
 
         //Save to localstorage
         saveTodos();
@@ -96,7 +96,7 @@ function createCompletedHtml() {
 
         todoContainer.addEventListener("click", () => {
             // Move the task back to the todo list
-            todoList.push(completedItem);
+            todoList.push(new Original(completedItem));
 
             completedTasks.splice(i, 1);
 
@@ -113,21 +113,21 @@ function createCompletedHtml() {
 function createTodoListHtml() {
     todoListContainer.innerHTML = "";
 
-    todoList.forEach((todo) => {
+    todoList.forEach((Original) => {
         const todoContainer = document.createElement("div");
         const title = document.createElement("h3");
 
-        title.innerHTML = todo;
+        title.innerHTML = Original.task;
         todoContainer.className = "todo";
         todoContainer.addEventListener("click", () => {
-            completedTasks.push(todo);
+            completedTasks.push(Original.task);
 
             //Local storage save
             saveTodos();
             createCompletedHtml();
 
             // Remove the task from todoList
-            const index = todoList.indexOf(todo);
+            const index = todoList.indexOf(Original);
             if (index !== -1) {
                 todoList.splice(index, 1);
             }

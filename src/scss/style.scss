@@ -1,6 +1,6 @@
 @import 'variables';
 //-----------------------------Mixins Settings-----------------------------------
-@mixin flex {
+@mixin media-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,7 +149,6 @@ section {
   font-weight: $primary-weight;
   font-size: $font-secondary-size;
   text-align: left;
-  // text-shadow: 0 0 5px $primary-glow-hover;
   border-radius: 8px;
   text-align: center;
 }
@@ -204,14 +203,15 @@ section {
   gap: 1em;
   flex-direction: column;
   flex-wrap: wrap;
-  @include flex;
+  @include media-flex;
 }
 
 
+//---------------------------Media Queries-------------------------------------
 // 280px Mobile View (I chose this due to the smaller screen such as the Galaxy Fold only has 280x653 in aspects ratio). If it's gonna be mobile friendly then let's include everyone! :)
 @media (min-width: $mobile) {
   .todo {
-    @include flex;
+    @include media-flex;
     @include todo-mobile;
 
     &:hover {
@@ -224,7 +224,7 @@ section {
 // Desktop view 1200px min
 @media (min-width: $desktop) {
   .todo {
-    @include flex;
+    @include media-flex;
     @include todo-desktop;
 
     &:hover {

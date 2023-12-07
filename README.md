@@ -3,7 +3,9 @@
 
 # Inlämningsuppgift Todo
 
-Finished project 🔗:
+Finished project 🔗: https://bucolic-pudding-35683c.netlify.app/
+
+Instructions:
 
 I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
 Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.

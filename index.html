@@ -4,10 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo or not todo?</title>
+    <title>TodoTódo</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app">
+
+      <p id="todoList"></p>
+     
+      <div class="flex1">
+        <img src="/src/images/TodoTódo.svg" alt="logotype">
+
+      <h3 class="fillClass">¡Fill out your task!</h3>
+      <form id="formID" class="formContainer">
+        
+        <input id="inputID" class="inputClass" type="text">
+        <button id="buttonID" type="submit" class="buttonClass">Add</button>
+        <button id="clearID" type="submit" class="buttonClass" title="Clear the Completed Tasks">Clear</button>
+      </form>
+    </div>
+
+    <div class="flex2">
+      <h3 class="unFinishedList">Active Tasks</h3>
+      <section id="themTasks" class="themTasks"></section>
+
+      
+
+      <h3 class="finishedList">Completed Tasks</h3>
+      <section id="themFinished" class="themFinished"></section>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
+

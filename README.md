@@ -1,4 +1,13 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/dmHVupXd)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=12918720&assignment_repo_type=AssignmentRepo)
+
 # Inlämningsuppgift Todo
+
+Finished project 🔗: https://bucolic-pudding-35683c.netlify.app/
+
+![Screenshot](https://raw.githubusercontent.com/Medieinstitutet/Todolist/main/src/images/Screenshot1.png)
+
+Instructions:
 
 I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
 Sidan skall visa ett antal punkter som skall göras. Dessa skall då komma upp på skärmen i form av en lista. När uppgiften är slutförd skall användaren kunna markera uppgiften som slutförd och uppgiften skall då tas bort från listan.
@@ -40,7 +49,7 @@ npm i
 och
 
 ```shell
-npm run dev 
+npm run dev
 ```
 
 för att köra projektet.

@@ -1,0 +1,234 @@
+@import 'variables';
+//-----------------------------Mixins Settings-----------------------------------
+@mixin media-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin todo-mobile {
+  width: 20%;
+  border: 1px solid $primary-underline-color;
+  padding: 2rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 15px;
+  background-color: $primary-box-color;
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #0e0e0e;
+} @mixin todo-mobile-hover {
+  background-color: $box-bg-hovered;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+      transition: 0.2s;
+  
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+      transition: 0.5s;
+}
+
+@mixin todo-desktop {
+    width: 15%;
+    height: 3.8rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6em;
+    border: 1px solid $primary-underline-color;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: $primary-box-color;
+    cursor: pointer;
+    box-shadow: 3px 3px 7px #0e0e0e;
+} @mixin todo-desktop-hover {
+      background-color: $box-bg-hovered;
+      color: $glow-hover-color;
+      text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+      transition: 0.2s;
+
+      box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+      transition: 0.5s;
+}
+//-----------------------------Root settings-----------------------------------
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: $xs-weight;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: $primary-underline-color;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+//----------------------------------------------------------------
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url(/src/images/mainnet-fbad3338fed984017713102896a426df.png);
+}
+
+.fillClass {
+  color: $primary-font-color;
+  font-weight: $primary-weight;
+  font-size: $font-primary-size;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  } 
+}
+
+.finishedList {
+  color: $primary-font-color;
+  border-bottom: 1px solid $primary-underline-color;
+  font-weight: $secondary-weight;
+  font-size: $font-primary-size;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  }
+}
+
+.unFinishedList {
+  color: $primary-font-color;
+  border-bottom: 1px solid $primary-underline-color;
+  font-weight: $secondary-weight;
+  font-size: $font-primary-size;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $glow-hover-color;
+  }
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid $box-bg-hovered;
+  border-radius: 10px;
+  background-color: $app-primary;
+  box-shadow: 5px 9px 8px #0e0e0e;
+  opacity: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 300px;
+  border-bottom: 1px solid $glow-hover-color;
+}
+
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $font-primary-size;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 15px;
+}
+
+.inputClass {
+  background-color: $box-bg-color;
+  border: 1px solid $glow-hover-color;
+  width: 250px;
+  font-weight: $primary-weight;
+  font-size: $font-secondary-size;
+  text-align: left;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.buttonClass {
+  width: 70px;
+  height: 40px;
+  padding: 0.4rem;
+  border-radius: 5px;
+  background-color: $box-bg-color;
+  border: 1px solid $primary-underline-color;
+  font-weight: $primary-weight;
+
+  
+  &:hover {
+    background-color: $box-bg-hovered;
+    color: $glow-hover-color;
+    text-shadow: 0 0 5px $primary-glow-hover;
+  }
+}
+
+.todo {
+  width: 35%;
+  border: 1px solid $primary-underline-color;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: $primary-box-color;
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #0e0e0e;
+
+  &:hover {
+    background-color: $box-bg-hovered;
+    color: $glow-hover-color;
+    text-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover;
+    transition: 0.2s;
+
+    box-shadow: 0 0 5px $primary-glow-hover, 0 0 25px $primary-glow-hover, 0 0 50px $primary-glow-hover, 0 0 100px $primary-glow-hover;
+    transition: 0.5s;
+  }
+}
+
+.flex1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $primary-underline-color;
+}
+
+.flex2 {
+  gap: 1em;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @include media-flex;
+}
+
+
+//---------------------------Media Queries-------------------------------------
+// 280px Mobile View (I chose this due to the smaller screen such as the Galaxy Fold only has 280x653 in aspects ratio). If it's gonna be mobile friendly then let's include everyone! :)
+@media (min-width: $mobile) {
+  .todo {
+    @include media-flex;
+    @include todo-mobile;
+
+    &:hover {
+      @include todo-mobile-hover;
+    }
+  }
+}
+
+
+// Desktop view 1200px min
+@media (min-width: $desktop) {
+  .todo {
+    @include media-flex;
+    @include todo-desktop;
+
+    &:hover {
+      @include todo-desktop-hover;
+    }
+  }
+}

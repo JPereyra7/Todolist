@@ -5,6 +5,8 @@
 
 Finished project 🔗: https://bucolic-pudding-35683c.netlify.app/
 
+![Screenshot](https://raw.githubusercontent.com/Medieinstitutet/Todolist/main/src/images/Screenshot1.png)
+
 Instructions:
 
 I denna inlämningsuppgift kommer ni att skapa er egen todo-lista.
